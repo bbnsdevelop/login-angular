@@ -1,0 +1,40 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"><i class="bi bi-person"></i> Cadastro de usuário</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+
+            <div class="row">
+                <label for="permissao">Permissão</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
+                    <label class="custom-control-label radio-inline-label" for="defaultInline1">Admin</label>
+                  </div>                  
+                  
+                  <div class="custom-control custom-radio custom-control-inline radio-inline">
+                    <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
+                    <label class="custom-control-label radio-inline-label" for="defaultInline2">Usuário</label>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3">
+                    <label for="nome_user">Nome de usuário</label>
+                    <div class="input-group">
+                        <input id="nome_user" class="form-control" name="nome_user" type="text">
+                    </div>
+                </div>
+            </div>
+            <app-modal-login-form-pass></app-modal-login-form-pass>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <app-modal-login-change-pass></app-modal-login-change-pass>
+        <button type="button" class="btn btn-success" (click)="modal.close('Save click')">Criar usuário</button>
+    </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)"><i class="bi bi-person-fill"></i></button>

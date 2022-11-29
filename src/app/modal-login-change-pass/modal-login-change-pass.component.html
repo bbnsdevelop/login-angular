@@ -1,0 +1,18 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-basic-title"><i class="bi-exclamation-circle"></i> Sua senha expirou! Crie uma
+      nova senha</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <app-modal-login-form-pass></app-modal-login-form-pass>
+      
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="modal.close('Save click')">Confirmar</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-warning" (click)="open(content)">Mudar senha</button>
